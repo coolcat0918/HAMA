@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BrattGPT</title>
+</head>
+<body>
+  <h2>BrattGPT Chat</h2>
+
+  <input id="input" placeholder="메시지" />
+  <button onclick="send()">전송</button>
+
+  <pre id="chat"></pre>
+
+  <script>
+    async function send() {
+      const input = document.getElementById("input").value;
+
+      const res = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: input })
+      });
+
+      const data = await res.json();
+
+      document.getElementById("chat").innerText +=
+        "\n나: " + input + "\nBrattGPT: " + data.reply + "\n";
+    }
+  </script>
+</body>
+</html>
