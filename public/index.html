@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BrattGPT</title>
+  <title>HAMA</title>
 </head>
 <body>
-  <h2>BrattGPT Chat</h2>
+  <h2>HAMA Chat</h2>
 
   <input id="input" placeholder="메시지" />
   <button onclick="send()">전송</button>
@@ -24,7 +24,7 @@
       const data = await res.json();
 
       document.getElementById("chat").innerText +=
-        "\n나: " + input + "\nBrattGPT: " + data.reply + "\n";
+        "\n나: " + input + "\nHAMA: " + data.reply + "\n";
     }
   </script>
 </body>
